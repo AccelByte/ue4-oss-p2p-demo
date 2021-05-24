@@ -1,0 +1,30 @@
+{
+  "name": "webrtc_signaling",
+  "version": "0.0.1",
+  "description": "webRTC signaling",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "nodemon --exec babel-node src/main.js",
+    "build": "babel src --out-dir dist --source-maps",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+ssh://git@bitbucket.org/lekapin/webrtc_signaling.git"
+  },
+  "author": "arifin@accelbyte.net",
+  "license": "MIT",
+  "homepage": "https://bitbucket.org/lekapin/webrtc_signaling#readme",
+  "dependencies": {
+    "nodemon": "^2.0.7",
+    "websocket": "^1.0.33"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.12.10",
+    "@babel/core": "^7.12.10",
+    "@babel/node": "^7.12.10",
+    "@babel/plugin-transform-runtime": "^7.12.10",
+    "@babel/preset-env": "^7.12.11",
+    "@babel/register": "^7.12.10"
+  }
+}

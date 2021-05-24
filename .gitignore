@@ -1,0 +1,3 @@
+# Node artifact files
+server/node-signaling-server/node_modules/
+server/node-signaling-server/dist/

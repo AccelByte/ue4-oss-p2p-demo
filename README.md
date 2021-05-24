@@ -9,7 +9,7 @@ This P2P uses thirdparty library [libJuice](https://github.com/paullouisageneau/
 This repo have a simple signaling server written in JS. Signaling server use to exchange P2P route info, this P2P info will be use by libJuice to make a peer to peer connection.
 To use signaling server:
 - Install NodeJS
-- Clone this repo, open command line and go to folder ```signaling_server```
+- Clone this repo, open command line and go to folder ```server/node-signaling-server```
 - Type command ```npm install```
 - Run the server ```npm start```
  
@@ -57,4 +57,8 @@ The example above we use Stun server from google, this should be enough if betwe
 Turn server is a relay server, the libJuice will use relay when it is not possible to make direct p2p connection between 2 peers. Unfortunately, there is no free turn server out there that reliable to use because turn server requires some resources when a lot of peer connected to the relay. We can install our own turn server using Coturn, please check on google how to install it on your cloud.
 When the turn server is ready we can set it to the ```Config/DefaultEngine.ini```
 
-### P2P feature is ready to test
+## Testing the P2P
+
+- Run 2 instance of the game, can be at the same computer or different computer. 1 instance will be as host and another one as client
+- To run host, on the main menu select ```HOST```, on the next menu make sure that the ```LAN``` option is ```OFF```. And select the ```FREE FOR ALL```
+- To join the session, on main menu select ```JOIN``` and make sure the ```LAN``` and ```DEDICATED``` options are both ```OFF```. And select ```SERVER``` at top of the menu.
