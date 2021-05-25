@@ -16,6 +16,9 @@ To use signaling server:
 By default the server will run on port ```8555```, make sure the firewall does not block the port.
 In order to make the signaling server accessible from internet, the signaling server must run in machine that has IP public (ex: in cloud).
 
+As for demo, we have prepared signaling server ready to use, but it is not reliable (can be down at any time).
+Signaling URL demo: ```wss://p2p-demo.accelbyte.io```
+
 ## How to use in vanilla shootergame
 - Clone this repo
 - Get the Shooter Game from Unreal Learn Center
@@ -56,6 +59,22 @@ The example above we use Stun server from google, this should be enough if betwe
 
 Turn server is a relay server, the libJuice will use relay when it is not possible to make direct p2p connection between 2 peers. Unfortunately, there is no free turn server out there that reliable to use because turn server requires some resources when a lot of peer connected to the relay. We can install our own turn server using Coturn, please check on google how to install it on your cloud.
 When the turn server is ready we can set it to the ```Config/DefaultEngine.ini```
+
+As for demo, we have prepared the turn server, but it is not reliable (can be down at any time):
+```
+[OnlineSubsystemAccelByte]
+bEnabled=true
+bAutoLoginUsingDeviceId=true
+SignalingServerURL="wss://p2p-demo.accelbyte.io"
+TurnServerUrl="p2p-demo.accelbyte.io"
+TurnServerPort=3478
+TurnServerUsername="accelbyte"
+TurnServerPassword="accelbyte"
+;StunServerUrl="stun1.l.google.com"
+;StunPort=19302
+```
+
+Note: If we already use turn server, actually we don't need stun server anymore because turn server also act as stun server.
 
 ## Testing the P2P
 

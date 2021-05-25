@@ -40,7 +40,7 @@ bool AccelByteWebSocket::Init()
 	FString SignalingURL;
 	GConfig->GetString(TEXT("OnlineSubsystemAccelByte"), TEXT("SignalingServerURL"), SignalingURL, GEngineIni);
 	UE_LOG_AB(Log, TEXT("WebSocket URL: %s"), *SignalingURL);
-	WebSocket = FWebSocketsModule::Get().CreateWebSocket(FString::Printf(TEXT("%s/%s"), *SignalingURL, *guid.ToString()));
+	WebSocket = FWebSocketsModule::Get().CreateWebSocket(FString::Printf(TEXT("%s/%s"), *SignalingURL, *guid.ToString()), TEXT("wss"));
 	WebSocket->OnConnected().AddRaw(this, &AccelByteWebSocket::OnConnected);
 	WebSocket->OnClosed().AddRaw(this, &AccelByteWebSocket::OnClose);
 	WebSocket->OnMessage().AddRaw(this, &AccelByteWebSocket::OnMessage);
